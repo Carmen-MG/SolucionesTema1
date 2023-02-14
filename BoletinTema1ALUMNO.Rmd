@@ -139,20 +139,10 @@ diffB_a <- setdiff(rownames(B), rownames(A))
 diffB_a #Hay 4 animales de Animals2 que no están en mammals
 ```
 
-e.  Determina las diferencia entre los animales que no aparecen en ambos conjuntos.
+f.  Determina las diferencia entre los animales que no aparecen en ambos conjuntos.
 
 ```{r}
-
-
-
-
-
-
-
-
-
-
-
+#Muchos de los animales que no aparecen en ambos conjuntos se debe a que no están correctamente escritos. Como, por ejemplo, "Patas monkey" en A  y "Potar monkey" en B.
 
 ```
 
