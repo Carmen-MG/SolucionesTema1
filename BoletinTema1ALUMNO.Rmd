@@ -209,6 +209,10 @@ glimpse(cabbages)
 summary(cabbages)
 
 
+##B
+sapply(cabbages, function(x) sum(is.na(x)))
+#No hay ningún valor perdido
+
 
 ```
 
