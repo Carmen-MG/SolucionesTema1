@@ -170,8 +170,9 @@ qqPlot(log(Animals2$brain))
     c.  Determina el número de librerías que tienes instaladas.
 
     ```{r}
-
-
+##A
+libReturn <- library()
+str(libReturn) #List of 3 (header, results, footer)
 
 
 
