@@ -124,11 +124,7 @@ colnames(B) #body, brain
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
 
 ```{r}
-
-
-
-
-
+commonAnimals <- intersect(rownames(A), rownames(B))
 
 ```
 
