@@ -177,6 +177,10 @@ str(libReturn) #List of 3 (header, results, footer)
 ##B
 head(libReturn$results,n=5)
 
+
+##C
+length(libReturn$results) #Hay 594 librerías instaladas
+
     ```
 
 4.  En las transparencias del tema 1 se citan los primeros pasos a seguir cuando se analiza un nuevo conjunto de datos.
