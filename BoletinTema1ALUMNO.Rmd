@@ -87,28 +87,38 @@ package.check <- lapply(packages, FUN = function(x) {
 
 <!-- -->
 
-a.  Mira la las características de ambos conjuntos usando la ayuda.
+a.  Mira las características de ambos conjuntos usando la ayuda.
 b.  Usa las funciones **dim, head, tail, str** para una primera visión de los conjuntos de datos.
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
+##Conjunto mammals
+
+help(package = MASS,topic = mammals) #Brain and Body Weights for 62 Species of Land Mammals
+library(MASS)
+str(mammals) #data frame con 62 obs. of  2 variables
+
+A <- MASS::mammals
+dim(A)
+head(A) #6 primeros registros
+tail(A) #6 últimos registros
+str(A) #=str(mammals)
+
+rownames(A)
+colnames(A) #body, brain
 
 
+##Conjunto Animals2
+help(package = robustbase,topic = Animals2) #Brain and Body Weights for 65 Species of Land Animals
 
+B <- robustbase::Animals2
+dim(B) #65 obs. of  2 variables
+head(B)
+tail(B)
+str(B)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+rownames(B)
+colnames(B) #body, brain
 ```
 
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
