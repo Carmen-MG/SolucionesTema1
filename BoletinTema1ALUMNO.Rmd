@@ -214,6 +214,21 @@ sapply(cabbages, function(x) sum(is.na(x)))
 #No hay ningún valor perdido
 
 
+##C
+#Cargar el paquete car y el conjunto Chile
+library(car)
+data(Chile)
+
+str(Chile) #2700 obs. of  8 variables
+dim(Chile)
+head(Chile)
+tail(Chile)
+glimpse(Chile)
+summary(Chile)
+
+#Número de valores perdidos
+sapply(Chile, function(x) sum(is.na(x)))
+#region, population, sex no tienen valores perdidos. Age, education, income, statusquo, vote tienen 1, 11, 98, 17, 168 respectivamente.
 ```
 
 5.  Muchas pruebas estadísticas suponen que los datos siguen una distribución Gaussiana. Utiliza la aproximación visual proporcionada por **qqPlot** para determinar si podemos asumir que las variables **HeadWt** y **VitC** del conjunto **cabbages** verifican esta condición.
