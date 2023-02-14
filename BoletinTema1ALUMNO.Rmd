@@ -255,9 +255,10 @@ qqPlot(cabbages$VitC)
 #Cargamos el conjunto de datos
 data("cabbages")
 
-#Inspeccionamos las digerentes variedades de calabaza
+#Inspeccionamos las diferentes variedades de calabaza
 levels(cabbages$Cult)
 
+#Creamos los histogramas
 hist(cabbages$VitC[cabbages$Cult == "c39"], col = "navy", main = "Histograma de VitC para Cult c39 y c52")
 hist(cabbages$VitC[cabbages$Cult == "c52"], col = "maroon", add = TRUE)
 legend("topright", legend = c("c39", "c52"), fill = c("navy", "maroon"))
