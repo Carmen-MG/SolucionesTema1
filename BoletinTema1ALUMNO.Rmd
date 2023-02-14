@@ -191,30 +191,22 @@ length(libReturn$results) #Hay 594 librerías instaladas
     d.  Utiliza la función **summary**, sobre **cabbages** y **Chile** y observa como, además de otros estadísticos, también devuelve el número de valores perdidos de cada variable.
 
 ```{r}
+##A
+#Etapas Análisis de Datos:
+  #1_Importación
+  #2_Preparación de los datos
+  #3_Transformación
 
+#Cargar el paquete MASS
+library(MASS)
+data(cabbages)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+str(cabbages)
+dim(cabbages)
+head(cabbages)
+tail(cabbages)
+glimpse(cabbages)
+summary(cabbages)
 
 
 
