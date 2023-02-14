@@ -174,12 +174,8 @@ qqPlot(log(Animals2$brain))
 libReturn <- library()
 str(libReturn) #List of 3 (header, results, footer)
 
-
-
-
-
-
-
+##B
+head(libReturn$results,n=5)
 
     ```
 
