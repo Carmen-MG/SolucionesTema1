@@ -287,17 +287,14 @@ abline(Model2)
 a.  Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**.
 
 ```{r,echo=T,include=T,eval=F}
+#Diagrama de dispersión global.
+plot(cabbages$HeadWt, cabbages$VitC, ylab = "VitC", xlab = "HeadWt")
 
+#Planteamos el modelo lineal
+Model1 <- lm(VitC ~ HeadWt, data = cabbages)
 
-
-
-
-
-
-
-
-
-
+#Representamos las rectas correspondientes a cada modelo lineal
+abline(Model1)
 
 ```
 
