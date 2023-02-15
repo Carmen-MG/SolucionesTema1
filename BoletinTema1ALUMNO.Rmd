@@ -291,10 +291,10 @@ a.  Utiliza un procedimiento análogo para determinar si se aprecia una relació
 plot(cabbages$HeadWt, cabbages$VitC, ylab = "VitC", xlab = "HeadWt")
 
 #Planteamos el modelo lineal
-Model1 <- lm(VitC ~ HeadWt, data = cabbages)
+M_lineal1 <- lm(VitC ~ HeadWt, data = cabbages)
 
 #Representamos la recta correspondiente al modelo lineal
-abline(Model1)
+abline(M_lineal1)
 
 ```
 
@@ -311,18 +311,27 @@ plot(cabbages$VitC, cabbages$HeadWt, pch=c(24,16)[cabbages$Cult], ylab = "HeadWt
 legend(x="topright",legend=c("Cult = c39","Cult = c52"), pch=c(24,16))
 
 #Planteamos los modelos lineales
-M_lineal1 <- lm(HeadWt~VitC, data = cabbages, subset = which(Cult == "c39"))
-M_lineal2 <- lm(HeadWt~VitC, data = cabbages, subset = which(Cult == "c52"))
+M_lineal2 <- lm(HeadWt~VitC, data = cabbages, subset = which(Cult == "c39"))
+M_lineal3 <- lm(HeadWt~VitC, data = cabbages, subset = which(Cult == "c52"))
 
 #Rectas del modelo lineal
-abline(M_lineal1, col = "red")
-abline(M_lineal2, lty = 5, col = "blue")
+abline(M_lineal2, col = "red")
+abline(M_lineal3, lty = 5, col = "blue")
 ```
 
 c.  Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficients**. Dado que hemos planteado un modelo $y=mx+n$, donde $y=VitC$ y $x=HeadWt$. La función **lm** nos permite obtener **(Intercept)**; **n** y la pendiente **HeadWt**; **m** (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
 
 ```{r}
+summary(M_lineal1)
+#lm(formula = HeadWt ~ VitC, data = cabbages, subset = which(Cult == "c39"))
+#El coeficiente para VitC = -0.05776
 
+summary(M_lineal2)
+#lm(formula = HeadWt ~ VitC, data = cabbages, subset = which(Cult == "c39"))
+#El coeficiente para VitC = -0.05776
 
+summary(M_lineal3)
+#lm(formula = HeadWt ~ VitC, data = cabbages, subset = which(Cult == "c52"))
+#El coeficiente para VitC = -0.06818
 
 ```
