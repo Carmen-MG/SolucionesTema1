@@ -293,7 +293,7 @@ plot(cabbages$HeadWt, cabbages$VitC, ylab = "VitC", xlab = "HeadWt")
 #Planteamos el modelo lineal
 Model1 <- lm(VitC ~ HeadWt, data = cabbages)
 
-#Representamos las rectas correspondientes a cada modelo lineal
+#Representamos la recta correspondiente al modelo lineal
 abline(Model1)
 
 ```
@@ -301,22 +301,22 @@ abline(Model1)
 b.  Repite el apartado anterior, pero obteniendo un modelo para cada una de las dos variedades de calabaza, **Cult**. Ver[Parámetros básicos plot](https://www.statmethods.net/advgraphs/parameters.html).
 
 ```{r}
+#Como ya hemos visto antes en el ejercicio 6 con la función 'levels', las variedades de la calabaza son c39 y c52
 
+#Diagrama de dispersión global.
+plot(cabbages$VitC, cabbages$HeadWt)
 
+#Diagrama de dispersión etiquetando según un factor
+plot(cabbages$VitC, cabbages$HeadWt, pch=c(24,16)[cabbages$Cult], ylab = "HeadWt", xlab = "VitC")
+legend(x="topright",legend=c("Cult = c39","Cult = c52"), pch=c(24,16))
 
+#Planteamos los modelos lineales
+M_lineal1 <- lm(HeadWt~VitC, data = cabbages, subset = which(Cult == "c39"))
+M_lineal2 <- lm(HeadWt~VitC, data = cabbages, subset = which(Cult == "c52"))
 
-
-
-
-
-
-
-
-
-
-
-
-
+#Rectas del modelo lineal
+abline(M_lineal1, col = "red")
+abline(M_lineal2, lty = 5, col = "blue")
 ```
 
 c.  Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficients**. Dado que hemos planteado un modelo $y=mx+n$, donde $y=VitC$ y $x=HeadWt$. La función **lm** nos permite obtener **(Intercept)**; **n** y la pendiente **HeadWt**; **m** (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
