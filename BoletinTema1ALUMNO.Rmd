@@ -270,16 +270,21 @@ legend("topright", legend = c("c39", "c52"), fill = c("navy", "maroon"))
 ```{r, echo=T,eval=F}
 #Diagrama de dispersión global.
 plot(whiteside$Temp, whiteside$Gas)
+
 #Diagrama de dispersión etiquetando según un factor.
-plot(whiteside$Temp, whiteside$Gas, pch=c(6,16)[whiteside\$Insul])
+plot(whiteside$Temp, whiteside$Gas, pch=c(6,16)[whiteside$Insul])
 legend(x="topright",legend=c("Insul = Before","Insul = After"), pch=c(6,16))
-# Planteamos 2 modelos lineales, uno para los datos de cada factor
+
+#Planteamos 2 modelos lineales, uno para los datos de cada factor
 Model1 <- lm(Gas ~ Temp, data = whiteside, subset = which(Insul == "Before"))
 Model2 <- lm(Gas ~ Temp, data = whiteside, subset = which(Insul == "After"))
-# Representamos las rectas correspondientes a cada modelo lineal
+
+#Representamos las rectas correspondientes a cada modelo lineal
 abline(Model1, lty=2)
 abline(Model2)
 ```
+
+a.  Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**.
 
 ```{r,echo=T,include=T,eval=F}
 
@@ -296,7 +301,6 @@ abline(Model2)
 
 ```
 
-a.  Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**.
 b.  Repite el apartado anterior, pero obteniendo un modelo para cada una de las dos variedades de calabaza, **Cult**. Ver[Parámetros básicos plot](https://www.statmethods.net/advgraphs/parameters.html).
 
 ```{r}
